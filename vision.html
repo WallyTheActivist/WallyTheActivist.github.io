@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover ROX Buy and Sell's vision for empowering Africa's digital economy. Join thousands building a trusted marketplace with faith, integrity, and innovation. App launching Q2 2026.">
+    <meta name="keywords" content="Africa digital economy, trusted marketplace Africa, online trading platform, safe marketplace, ROX vision, African entrepreneurs, buy sell online Africa, community marketplace">
+    <title>Our Vision & Join - Empowering Africa's Trusted Marketplace | ROX Buy and Sell</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #333;
+            background-color: #FFFFFF;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: #003366;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: box-shadow 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #FF4500;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #003366;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #FF4500;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #003366;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.95) 0%, rgba(255, 69, 0, 0.95) 100%), 
+                        url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=1600&h=900&fit=crop') center/cover;
+            padding: 100px 20px;
+            text-align: center;
+            color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 69, 0, 0.2) 100%);
+            z-index: 1;
+        }
+
+        .page-header > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-header h1 {
+            color: #FFFFFF;
+            font-size: 48px;
+            margin-bottom: 16px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .page-header p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        /* Fade-in Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Vision Section */
+        .vision-section {
+            background-color: #F5F5F5;
+            border-radius: 15px;
+            padding: 60px 40px;
+            margin: 40px 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        .vision-section h2 {
+            color: #FF4500;
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .vision-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .vision-content p {
+            font-size: 18px;
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+
+        .vision-content strong {
+            color: #FF4500;
+            font-weight: 600;
+        }
+
+        .vision-image {
+            width: 100%;
+            max-width: 900px;
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1523475496153-3d6cc0f0bf19?w=1200&h=600&fit=crop') center/cover;
+            border-radius: 15px;
+            margin: 40px auto;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .vision-pillars {
+            background-color: #FFFFFF;
+            padding: 40px;
+            border-left: 4px solid #FFD700;
+            margin: 40px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .vision-pillars h3 {
+            color: #003366;
+            margin-bottom: 24px;
+            font-size: 28px;
+        }
+
+        .vision-pillars ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .vision-pillars li {
+            padding: 16px 0;
+            padding-left: 40px;
+            position: relative;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .vision-pillars li::before {
+            content: "⭐";
+            position: absolute;
+            left: 0;
+            font-size: 24px;
+        }
+
+        /* Core Values */
+        .core-values {
+            background: linear-gradient(135deg, #003366 0%, #0055AA 100%);
+            color: #FFFFFF;
+            padding: 60px 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .core-values h3 {
+            color: #FFD700;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .value-item {
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .value-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .value-item h4 {
+            color: #FFD700;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .value-item p {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* Social Proof Section */
+        .social-proof {
+            background-color: #FFFFFF;
+            padding: 60px 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .social-proof h3 {
+            color: #003366;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto 50px;
+        }
+
+        .proof-stat {
+            padding: 30px;
+            background: linear-gradient(135deg, #F5F5F5 0%, #FFFFFF 100%);
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .proof-stat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .stat-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #FF4500;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #003366;
+            font-weight: 600;
+        }
+
+        .testimonial {
+            max-width: 700px;
+            margin: 40px auto 0;
+            padding: 40px;
+            background: #F5F5F5;
+            border-left: 4px solid #FF4500;
+            border-radius: 8px;
+            font-style: italic;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-text {
+            font-size: 20px;
+            color: #003366;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            font-size: 16px;
+            color: #FF4500;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        /* Join Section */
+        .join-section {
+            padding: 80px 20px;
+            background-color: #FFFFFF;
+            text-align: center;
+        }
+
+        .join-section h2 {
+            color: #FF4500;
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .slogan {
+            font-size: 28px;
+            font-weight: 600;
+            color: #003366;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .join-content {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .join-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .join-content strong {
+            color: #FF4500;
+            font-weight: 600;
+        }
+
+        /* Contact Cards */
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 60px auto;
+        }
+
+        .contact-card {
+            background-color: #F5F5F5;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+        }
+
+        .contact-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .contact-card h3 {
+            color: #FF4500;
+            margin-bottom: 16px;
+        }
+
+        .contact-card p {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .contact-card a {
+            color: #003366;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .contact-card a:hover {
+            color: #FF4500;
+        }
+
+        /* Launch Announcement */
+        .launch-announcement {
+            background: linear-gradient(135deg, #FFD700 0%, #FF4500 100%);
+            color: #FFFFFF;
+            padding: 60px 40px;
+            border-radius: 15px;
+            margin: 60px 0;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(255,69,0,0.3);
+        }
+
+        .launch-announcement h3 {
+            color: #FFFFFF;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .launch-announcement p {
+            font-size: 22px;
+            font-weight: 600;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .launch-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .launch-timeline {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .email-signup {
+            max-width: 500px;
+            margin: 30px auto 0;
+        }
+
+        .email-signup h4 {
+            color: #FFFFFF;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .signup-form {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .signup-form input[type="email"] {
+            flex: 1;
+            min-width: 250px;
+            padding: 14px 20px;
+            font-size: 16px;
+            border: 2px solid #FFFFFF;
+            border-radius: 50px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .signup-form input[type="email"]:focus {
+            border-color: #003366;
+            box-shadow: 0 0 0 3px rgba(0,51,102,0.2);
+        }
+
+        .signup-form button {
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            background-color: #003366;
+            color: #FFFFFF;
+            border: 2px solid #003366;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .signup-form button:hover {
+            background-color: #FFFFFF;
+            color: #003366;
+            transform: scale(1.05);
+        }
+
+        .signup-form button:active {
+            transform: scale(0.98);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 80px 40px;
+            background-color: #F5F5F5;
+            margin: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        .cta-section h3 {
+            color: #003366;
+            font-size: 32px;
+            margin-bottom: 24px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 18px 48px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-primary {
+            background-color: #FF4500;
+            color: #FFFFFF;
+            border: 2px solid #FF4500;
+        }
+
+        .cta-primary:hover {
+            background-color: #E63E00;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255,69,0,0.4);
+        }
+
+        .cta-secondary {
+            background-color: transparent;
+            color: #003366;
+            border: 2px solid #003366;
+        }
+
+        .cta-secondary:hover {
+            background-color: #003366;
+            color: #FFFFFF;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,51,102,0.3);
+        }
+
+        .cta-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: #FFFFFF;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            color: #FFD700;
+            margin-bottom: 16px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            line-height: 2;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #FF4500;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 16px;
+        }
+
+        .social-icons a {
+            color: #FFFFFF;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #FFD700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #CCCCCC;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 38px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 22px;
+            }
+
+            .page-header {
+                padding: 80px 20px;
+            }
+
+            .page-header h1 {
+                font-size: 38px;
+            }
+
+            .page-header p {
+                font-size: 18px;
+            }
+
+            .slogan {
+                font-size: 24px;
+            }
+
+            .launch-announcement h3 {
+                font-size: 28px;
+            }
+
+            .launch-announcement p {
+                font-size: 18px;
+            }
+
+            .values-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .proof-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: #FFFFFF;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.1);
+                padding: 20px 0;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                padding: 15px 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            h3 {
+                font-size: 22px;
+            }
+
+            body {
+                font-size: 16px;
+            }
+
+            .page-header {
+                padding: 70px 20px;
+            }
+
+            .page-header h1 {
+                font-size: 36px;
+            }
+
+            .page-header p {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 40px 10px;
+            }
+
+            .vision-section,
+            .core-values,
+            .launch-announcement,
+            .cta-section {
+                padding: 40px 20px;
+            }
+
+            .vision-image {
+                height: 250px;
+            }
+
+            .slogan {
+                font-size: 22px;
+            }
+
+            .join-section h2 {
+                font-size: 34px;
+            }
+
+            .launch-announcement h3 {
+                font-size: 28px;
+            }
+
+            .launch-announcement p {
+                font-size: 18px;
+            }
+
+            .launch-timeline {
+                font-size: 20px;
+                padding: 16px 32px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cta-button {
+                width: 100%;
+                padding: 20px 40px;
+                font-size: 20px;
+            }
+
+            .signup-form {
+                flex-direction: column;
+            }
+
+            .signup-form input[type="email"],
+            .signup-form button {
+                width: 100%;
+                font-size: 18px;
+                padding: 16px 24px;
+            }
+
+            .proof-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial {
+                padding: 30px 20px;
+            }
+
+            .testimonial-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo" aria-label="ROX Buy and Sell Home">ROX Buy and Sell</a>
+            <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="story.html">Our Story</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="why-choose.html">Why Choose ROX</a></li>
+                <li><a href="vision.html" class="active">Vision & Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Our Vision</h1>
+            <p>Building Africa's digital economy with trust, integrity, and innovation</p>
+        </section>
+
+        <section class="vision-section fade-in">
+            <h2>Our Vision</h2>
+            <div class="vision-content">
+                <p>Our vision is simple but powerful: to empower Africa's digital economy by creating a marketplace where trust, safety, and community come first.</p>
+                
+                <p>We envision a future where online trading isn't just accessible—it's genuinely safe. Where small businesses can compete on equal footing with larger companies. Where buyers don't have to worry about scams or fraud. Where sellers can build their reputations and grow their income with confidence.</p>
+                
+                <p>At ROX, we're guided by three core principles: <strong>faith</strong>, <strong>integrity</strong>, and <strong>innovation</strong>. We believe that doing business the right way—being honest, transparent, and committed to excellence—is the foundation of lasting success.</p>
+
+                <div class="vision-image" role="img" aria-label="Empowering African entrepreneurs and digital economy through trusted marketplace"></div>
+
+                <div class="vision-pillars">
+                    <h3>We're Building a Future Where:</h3>
+                    <ul>
+                        <li><strong>Everyone can trade safely</strong> – No matter where you are or what you're buying or selling, you can do so with complete confidence and peace of mind</li>
+                        <li><strong>Small businesses thrive</strong> – Local entrepreneurs have the tools, support, and platform they need to reach customers, grow their sales, and build sustainable futures</li>
+                        <li><strong>Communities grow stronger</strong> – Every transaction contributes to economic growth, job creation, and opportunity across the continent</li>
+                    </ul>
+                </div>
+
+                <p>This isn't just a business goal—it's a mission. We're not satisfied with simply being another marketplace. We want to be the marketplace that sets the standard for safety, transparency, and community impact across Africa.</p>
+            </div>
+        </section>
+
+        <div class="core-values fade-in">
+            <h3>Guided by Our Core Values</h3>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">❤️</div>
+                    <h4>Faith</h4>
+                    <p>We believe in doing what's right, even when it's hard. Our commitment to our users is grounded in faith and purpose.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🛡️</div>
+                    <h4>Integrity</h4>
+                    <p>Honesty and transparency in everything we do. No hidden fees, no shady practices—just straightforward, trustworthy service.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">💡</div>
+                    <h4>Innovation</h4>
+                    <p>Constantly improving, learning, and evolving to meet the changing needs of our users and the marketplace.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="social-proof fade-in">
+            <h3>Join Thousands Transforming Africa's Digital Economy</h3>
+            <div class="proof-grid">
+                <div class="proof-stat">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-label">Active Community Members</div>
+                </div>
+                <div class="proof-stat">
+                    <div class="stat-icon">🤝</div>
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Safe Transactions Completed</div>
+                </div>
+                <div class="proof-stat">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-number">4.8/5</div>
+                    <div class="stat-label">User Satisfaction Rating</div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">"ROX is the future of safe trading in Africa. Finally, a platform that puts trust and community first!"</p>
+                <p class="testimonial-author">— African Entrepreneur</p>
+            </div>
+        </section>
+
+        <section class="join-section fade-in">
+            <h2>Join the ROX Community</h2>
+            <p class="slogan">Real People. Real Deals. Real Trust.</p>
+            
+            <div class="join-content">
+                <p>ROX Buy and Sell is more than a platform—it's a community of buyers, sellers, and entrepreneurs who believe in doing business the right way. When you join ROX, you're not just creating an account—you're becoming part of a movement to transform online trading in Africa.</p>
+                
+                <p>Whether you're looking to buy your next smartphone, sell handmade crafts, or build a thriving online business, ROX is here to support you every step of the way.</p>
+                
+                <p><strong>Ready to experience online trading the way it should be?</strong></p>
+            </div>
+
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email Us</h3>
+                    <p><a href="mailto:info@roxbuyandsell.com">info@roxbuyandsell.com</a></p>
+                    <p>We'd love to hear from you!</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Call Us</h3>
+                    <p><a href="tel:0682808468">068 280 8468</a></p>
+                    <p><a href="tel:0670346561">067 034 6561</a></p>
+                    <p>Available to answer your questions</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="launch-announcement fade-in">
+            <div class="launch-icon">🚀</div>
+            <h3>The ROX Buy and Sell App is Launching Soon!</h3>
+            <p>Stay tuned for updates. We're putting the final touches on an experience that will change the way Africa buys and sells online.</p>
+            <div class="launch-timeline">Launching Q2 2026</div>
+            <div class="email-signup">
+                <h4>Be the First to Know!</h4>
+                <form class="signup-form" onsubmit="handleSignup(event)" aria-label="Email signup form">
+                    <input 
+                        type="email" 
+                        placeholder="Enter your email address" 
+                        required 
+                        aria-label="Email address"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                    >
+                    <button type="submit" aria-label="Sign up for updates">Sign Up</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="cta-section fade-in">
+            <h3>Be Part of the Future</h3>
+            <p>Join thousands of users who are already experiencing the ROX difference. Safe, simple, and community-driven—that's the ROX way.</p>
+            <div class="cta-buttons">
+                <a href="mailto:info@roxbuyandsell.com" class="cta-button cta-primary" aria-label="Contact ROX Buy and Sell via email">Get in Touch</a>
+                <a href="index.html" class="cta-button cta-secondary" aria-label="Learn more about ROX Buy and Sell">Learn More</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ROX Buy and Sell</h3>
+                <p>Africa's Trusted Online Marketplace</p>
+                <p>Real People. Real Deals. Real Trust.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="story.html">Our Story</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="why-choose.html">Why Choose ROX</a></li>
+                    <li><a href="vision.html">Vision & Join</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@roxbuyandsell.com</p>
+                <p>Phone: 068 280 8468</p>
+                <p>Phone: 067 034 6561</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/rox_buyand_sell?igsh=dzZuaXB3ajR5YWt3" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/1AYKrjBXYG/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.tiktok.com/@rox_buy_and_sell_28?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ROX Buy and Sell. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll shadow effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Fade-in animation on scroll using IntersectionObserver
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        fadeElements.forEach(element => {
+            fadeObserver.observe(element);
+        });
+
+        // Email signup form handler
+        function handleSignup(event) {
+            event.preventDefault();
+            const emailInput = event.target.querySelector('input[type="email"]');
+            const email = emailInput.value;
+            
+            // Placeholder - in production, this would send to your backend
+            alert(`Thank you for signing up! We'll send updates to ${email} when the ROX app launches.`);
+            emailInput.value = '';
+            
+            // In production, you would send this to your backend:
+            // fetch('/api/signup', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({ email })
+            // });
+        }
+
+        // Page transition on load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loaded');
+        });
+
+        // Page transition on navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                // Only intercept if it's a page link (not # anchor)
+                if (href && !href.startsWith('#') && href !== '' && !link.hasAttribute('target')) {
+                    e.preventDefault();
+                    document.body.classList.remove('loaded');
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 300);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

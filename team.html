@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the team behind ROX Buy and Sell - passionate leaders building Africa's trusted marketplace guided by faith, integrity, and innovation">
+    <meta name="keywords" content="ROX team, Cohen Ngoepe, African marketplace, trusted team, leadership">
+    <title>Meet the Team - ROX Buy and Sell: Africa's Trusted Marketplace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #FFFFFF;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: #003366;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: box-shadow 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #FF4500;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #003366;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #FF4500;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #003366;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #FFD700 0%, #FF4500 100%);
+            padding: 80px 20px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        .page-header h1 {
+            color: #FFFFFF;
+            font-size: 48px;
+            margin-bottom: 16px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .page-header p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 12px;
+        }
+
+        .page-header .brand-tagline {
+            font-size: 18px;
+            font-style: italic;
+            opacity: 0.95;
+            margin-top: 8px;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        /* Founder Section */
+        .founder-section {
+            background-color: #F5F5F5;
+            border-radius: 8px;
+            padding: 60px 40px;
+            margin: 40px 0;
+        }
+
+        .founder-section h2 {
+            color: #FF4500;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .founder-content {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .founder-image {
+            flex: 0 0 300px;
+            height: 300px;
+            background: url('images/cohen.png') center/cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .founder-bio {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .founder-bio h3 {
+            color: #003366;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .founder-bio .title {
+            color: #FF4500;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .founder-bio p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+
+        .founder-quote {
+            background: linear-gradient(135deg, #FF4500 0%, #FF6347 100%);
+            color: #FFFFFF;
+            padding: 24px 30px;
+            border-radius: 15px;
+            margin: 24px 0;
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(255,69,0,0.3);
+            position: relative;
+        }
+
+        .founder-quote::before {
+            content: '"';
+            font-size: 60px;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+
+        .founder-highlights {
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-left: 4px solid #FF4500;
+            margin-top: 20px;
+        }
+
+        .founder-highlights h4 {
+            color: #003366;
+            margin-bottom: 16px;
+        }
+
+        .founder-highlights ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .founder-highlights li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 16px;
+        }
+
+        .founder-highlights li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #FF4500;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Leadership Team Section */
+        .leadership-section {
+            padding: 60px 20px;
+            background-color: #FFFFFF;
+        }
+
+        .leadership-section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* Role Filters */
+        .role-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: #F5F5F5;
+            border: 2px solid #003366;
+            color: #003366;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: #FF4500;
+            border-color: #FF4500;
+            color: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255,69,0,0.3);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-card {
+            background-color: #F5F5F5;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .team-card:nth-child(1) { animation-delay: 0.1s; }
+        .team-card:nth-child(2) { animation-delay: 0.2s; }
+        .team-card:nth-child(3) { animation-delay: 0.3s; }
+        .team-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .team-card:hover {
+            transform: scale(1.05) translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+        }
+
+        .team-card-image {
+            width: 100%;
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .team-card-image.sello {
+            background-image: url('images/sello.png');
+        }
+
+        .team-card-image.emmanuel {
+            background-image: url('images/emmanuel.jpg');
+        }
+
+        .team-card-image.xiluva {
+            background-image: url('images/xiluva.jpeg');
+        }
+
+        .team-card-image.owlcloak {
+            background: linear-gradient(135deg, #003366 0%, #0055AA 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+        }
+
+        .team-card-content {
+            padding: 30px;
+        }
+
+        .team-card-content h3 {
+            color: #FF4500;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .team-card-content .role {
+            color: #003366;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .role-icon {
+            font-size: 18px;
+        }
+
+        .team-card-content p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .team-social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #E0E0E0;
+        }
+
+        .team-social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: #FFFFFF;
+            border-radius: 50%;
+            color: #003366;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .team-social-links a:hover {
+            background-color: #FF4500;
+            color: #FFFFFF;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(255,69,0,0.3);
+        }
+
+        /* Partner Badge */
+        .partner-badge {
+            display: inline-block;
+            background-color: #FFD700;
+            color: #003366;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #003366 0%, #0055AA 100%);
+            color: #FFFFFF;
+            padding: 80px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cta-section h2 {
+            color: #FFFFFF;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #FF4500;
+            color: #FFFFFF;
+            padding: 16px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255,69,0,0.3);
+        }
+
+        .cta-btn:hover {
+            background-color: #FFD700;
+            color: #003366;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255,215,0,0.4);
+        }
+
+        .cta-btn.secondary {
+            background-color: transparent;
+            border: 2px solid #FFFFFF;
+        }
+
+        .cta-btn.secondary:hover {
+            background-color: #FFFFFF;
+            color: #003366;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: #FFFFFF;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            color: #FFD700;
+            margin-bottom: 16px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            line-height: 2;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #FF4500;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 16px;
+        }
+
+        .social-icons a {
+            color: #FFFFFF;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #FFD700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #CCCCCC;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 38px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 22px;
+            }
+
+            .page-header h1 {
+                font-size: 38px;
+            }
+
+            .page-header p {
+                font-size: 18px;
+            }
+
+            .founder-content {
+                flex-direction: column;
+            }
+
+            .founder-image {
+                flex: 1;
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: #FFFFFF;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.1);
+                padding: 20px 0;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                padding: 15px 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            body {
+                font-size: 14px;
+            }
+
+            .page-header {
+                padding: 60px 20px;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .page-header p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 40px 10px;
+            }
+
+            .founder-section {
+                padding: 40px 20px;
+            }
+
+            .founder-image {
+                height: 300px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .role-filters {
+                gap: 10px;
+            }
+
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo" aria-label="ROX Buy and Sell Home">ROX Buy and Sell</a>
+            <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="story.html">Our Story</a></li>
+                <li><a href="team.html" class="active">Team</a></li>
+                <li><a href="why-choose.html">Why Choose ROX</a></li>
+                <li><a href="vision.html">Vision & Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Meet the Team</h1>
+            <p>The passionate people building Africa's most trusted online marketplace</p>
+            <p class="brand-tagline">Guided by faith, integrity, and innovation</p>
+        </section>
+
+        <section class="founder-section">
+            <h2>About the Founder</h2>
+            <div class="founder-content">
+                <div class="founder-image" role="img" aria-label="Cohen Ngoepe, Founder of ROX Buy and Sell"></div>
+                <div class="founder-bio">
+                    <h3>Cohen Ngoepe</h3>
+                    <p class="title">Founder & CEO</p>
+                    <div class="founder-quote">
+                        What if there was a marketplace Africa could trust?
+                    </div>
+                    <p>Cohen Ngoepe is the visionary behind ROX Buy and Sell. After experiencing firsthand the dangers of unregulated online marketplaces, Cohen set out to create a platform that puts safety, transparency, and community at the forefront.</p>
+                    <p>Driven by a passion for technology and a deep commitment to empowering African entrepreneurs, Cohen has assembled a team of talented professionals dedicated to transforming the way people buy and sell online.</p>
+                    
+                    <div class="founder-highlights">
+                        <h4>Cohen's Approach</h4>
+                        <ul>
+                            <li>Experienced fraud firsthand, fueling a mission to protect others</li>
+                            <li>Believes in building products that solve real problems for real people</li>
+                            <li>Committed to transparency, integrity, and innovation</li>
+                            <li>Passionate about supporting small businesses and local entrepreneurs</li>
+                            <li>Guided by faith and a desire to create positive impact across Africa</li>
+                            <li>Focused on building a platform where everyone can trade with confidence</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="leadership-section">
+            <h2>Meet Our Leadership Team</h2>
+            <p style="text-align: center; font-size: 18px; max-width: 800px; margin: 0 auto 20px;">A diverse group of experts bringing together skills in finance, marketing, operations, and technology to make ROX Buy and Sell a reality.</p>
+
+            <div class="role-filters">
+                <button class="filter-btn active" data-filter="all">All Team</button>
+                <button class="filter-btn" data-filter="leadership">Leadership</button>
+                <button class="filter-btn" data-filter="partner">Partners</button>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card" data-role="leadership">
+                    <div class="team-card-image sello"></div>
+                    <div class="team-card-content">
+                        <h3>Sello Sithole</h3>
+                        <p class="role"><span class="role-icon"><i class="fas fa-briefcase"></i></span>Right-hand to Cohen Ngoepe & Finance Manager</p>
+                        <p>Sello is Cohen's trusted partner in building ROX, bringing financial expertise and strategic thinking to every decision. With a keen eye for numbers and a passion for sustainable growth, Sello ensures ROX operates efficiently and responsibly.</p>
+                        <div class="team-social-links">
+                            <a href="#" aria-label="Email Sello Sithole" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="#" aria-label="Sello Sithole LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Sello Sithole Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card" data-role="leadership">
+                    <div class="team-card-image emmanuel"></div>
+                    <div class="team-card-content">
+                        <h3>Emmanuel Demande</h3>
+                        <p class="role"><span class="role-icon"><i class="fas fa-bullhorn"></i></span>Marketing Director</p>
+                        <p>Emmanuel leads ROX's marketing efforts, crafting campaigns that resonate with African audiences and building awareness of the platform across the continent. His creative vision and deep understanding of local markets drive ROX's growth and community engagement.</p>
+                        <div class="team-social-links">
+                            <a href="#" aria-label="Email Emmanuel Demande" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="#" aria-label="Emmanuel Demande LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Emmanuel Demande Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card" data-role="leadership">
+                    <div class="team-card-image xiluva"></div>
+                    <div class="team-card-content">
+                        <h3>Xiluva Baloyi</h3>
+                        <p class="role"><span class="role-icon"><i class="fas fa-cog"></i></span>Chief Operating Officer (COO)</p>
+                        <p>Xiluva oversees ROX's day-to-day operations, ensuring everything runs smoothly from user onboarding to dispute resolution. Her operational excellence and commitment to customer satisfaction keep ROX running like clockwork.</p>
+                        <div class="team-social-links">
+                            <a href="#" aria-label="Email Xiluva Baloyi" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="#" aria-label="Xiluva Baloyi LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Xiluva Baloyi Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card" data-role="partner">
+                    <div class="team-card-image owlcloak"><i class="fas fa-code" style="font-size: 80px; display: flex; align-items: center; justify-content: center; height: 100%;"></i></div>
+                    <div class="team-card-content">
+                        <h3>OWLCLOAK</h3>
+                        <p class="role"><span class="role-icon"><i class="fas fa-laptop-code"></i></span>Technology Partner</p>
+                        <p>OWLCLOAK provides the cutting-edge technology infrastructure that powers ROX Buy and Sell. From secure payment systems to fraud detection algorithms, OWLCLOAK's expertise ensures ROX remains at the forefront of innovation.</p>
+                        <span class="partner-badge">Technology Partner</span>
+                        <div class="team-social-links">
+                            <a href="#" aria-label="Email OWLCLOAK" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="#" aria-label="OWLCLOAK Website" title="Website"><i class="fas fa-globe"></i></a>
+                            <a href="#" aria-label="OWLCLOAK Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Connect with Us</h2>
+            <p>Have questions? Want to learn more about our team or join the ROX movement? We'd love to hear from you.</p>
+            <div class="cta-buttons">
+                <a href="mailto:info@roxbuyandsell.com" class="cta-btn">
+                    <span><i class="fas fa-envelope"></i></span>
+                    <span>Email Us</span>
+                </a>
+                <a href="https://www.instagram.com/rox_buyand_sell?igsh=dzZuaXB3ajR5YWt3" target="_blank" rel="noopener noreferrer" class="cta-btn secondary">
+                    <span><i class="fas fa-share-alt"></i></span>
+                    <span>Follow on Social Media</span>
+                </a>
+                <a href="vision.html" class="cta-btn">
+                    <span><i class="fas fa-rocket"></i></span>
+                    <span>Join Our Team</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ROX Buy and Sell</h3>
+                <p>Africa's Trusted Online Marketplace</p>
+                <p>Real People. Real Deals. Real Trust.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="story.html">Our Story</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="why-choose.html">Why Choose ROX</a></li>
+                    <li><a href="vision.html">Vision & Join</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@roxbuyandsell.com</p>
+                <p>Phone: 068 280 8468</p>
+                <p>Phone: 067 034 6561</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/rox_buyand_sell?igsh=dzZuaXB3ajR5YWt3" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/1AYKrjBXYG/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.tiktok.com/@rox_buy_and_sell_28?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ROX Buy and Sell. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Header shadow on scroll
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Team role filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const teamCards = document.querySelectorAll('.team-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                // Show/hide team cards based on filter
+                teamCards.forEach(card => {
+                    const cardRole = card.getAttribute('data-role');
+                    
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                        // Reset animation
+                        card.style.animation = 'none';
+                        setTimeout(() => {
+                            card.style.animation = 'fadeInUp 0.6s ease forwards';
+                        }, 10);
+                    } else if (cardRole === filterValue) {
+                        card.style.display = 'block';
+                        card.style.animation = 'none';
+                        setTimeout(() => {
+                            card.style.animation = 'fadeInUp 0.6s ease forwards';
+                        }, 10);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lazy loading for images (simulated - would work with actual img tags)
+        // Adding loading attribute to images would be done in HTML with <img loading="lazy">
+        
+        // Video placeholder click handlers (for future implementation)
+        document.querySelectorAll('.video-placeholder').forEach(placeholder => {
+            placeholder.addEventListener('click', () => {
+                alert('Video feature coming soon! Stay tuned for team introduction videos.');
+            });
+        });
+
+        // Page transition on load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loaded');
+        });
+
+        // Page transition on navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                // Only intercept if it's a page link (not # anchor)
+                if (href && !href.startsWith('#') && href !== '' && !link.hasAttribute('target')) {
+                    e.preventDefault();
+                    document.body.classList.remove('loaded');
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 300);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
