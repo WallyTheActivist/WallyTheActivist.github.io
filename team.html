@@ -17,6 +17,13 @@
             box-sizing: border-box;
         }
 
+        /* Global Image Responsiveness */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
         body {
             font-family: 'Source Sans Pro', sans-serif;
             font-size: 16px;
@@ -152,7 +159,7 @@
         }
 
         section {
-            padding: 60px 20px;
+            padding: 80px 60px;
         }
 
         /* Founder Section */
@@ -176,11 +183,19 @@
             flex-wrap: wrap;
         }
 
-        .founder-image {
-            flex: 0 0 300px;
-            height: 300px;
-            background: url('images/cohen.png') center/cover;
+        .founder-container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .founder-container img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
             border-radius: 50%;
+            object-fit: cover;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
 
@@ -649,6 +664,20 @@
                 padding: 40px 20px;
             }
 
+            main {
+                padding: 10px;
+            }
+
+            .founder-highlights li {
+                padding-left: 28px;
+                font-size: 15px;
+            }
+
+            .founder-highlights li::before {
+                font-size: 16px;
+                left: 2px;
+            }
+
             /* Founder Section - Mobile */
             .founder-section {
                 padding: 40px 20px;
@@ -664,15 +693,16 @@
                 gap: 25px;
             }
 
-            .founder-image {
-                flex: 0 0 auto;
-                width: 100%;
-                max-width: 100%;
-                height: 300px;
+            .founder-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 25px;
+            }
+
+            .founder-container img {
+                max-width: 250px;
                 border-radius: 12px;
-                background: url('images/cohen.png') center/cover;
-                background-size: cover;
-                background-position: center;
+                margin: 0 auto;
             }
 
             .founder-text {
@@ -930,15 +960,16 @@
                 gap: 35px;
             }
 
-            .founder-image {
-                width: 100%;
-                max-width: 500px;
-                height: 400px;
-                margin: 0 auto;
-                background: url('images/cohen.png') center/cover;
-                background-size: cover;
-                background-position: center;
+            .founder-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 35px;
+            }
+
+            .founder-container img {
+                max-width: 350px;
                 border-radius: 15px;
+                margin: 0 auto;
             }
 
             /* Team Grid - Tablet (2 columns) */
@@ -991,13 +1022,14 @@
                 gap: 50px;
             }
 
-            .founder-image {
+            .founder-container {
+                flex-direction: row;
+                gap: 50px;
+            }
+
+            .founder-container img {
                 flex: 0 0 350px;
                 max-width: 350px;
-                height: 400px;
-                background: url('images/cohen.png') center/cover;
-                background-size: cover;
-                background-position: center;
                 border-radius: 50%;
             }
 
@@ -1063,8 +1095,10 @@
         <section class="founder-section">
             <h2>About the Founder</h2>
             <div class="founder-content">
-                <div class="founder-image" role="img" aria-label="Cohen Ngoepe, Founder of ROX Buy and Sell"></div>
-                <div class="founder-bio">
+                <div class="founder-container">
+                    <img src="images/cohen.png" alt="Cohen Ngoepe - Founder & CEO of ROX Buy and Sell">
+                    <div class="founder-text">
+                        <div class="founder-bio">
                     <h3>Cohen Ngoepe</h3>
                     <p class="title">Founder & CEO</p>
                     <div class="founder-quote">
@@ -1083,6 +1117,8 @@
                             <li>Guided by faith and a desire to create positive impact across Africa</li>
                             <li>Focused on building a platform where everyone can trade with confidence</li>
                         </ul>
+                    </div>
+                        </div>
                     </div>
                 </div>
             </div>

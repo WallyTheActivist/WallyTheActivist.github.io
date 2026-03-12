@@ -21,6 +21,13 @@
             scroll-behavior: smooth;
         }
 
+        /* Global Image Responsiveness */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
         body {
             font-family: 'Source Sans Pro', sans-serif;
             font-size: 16px;
@@ -230,7 +237,7 @@
         }
 
         section {
-            padding: 60px 20px;
+            padding: 80px 60px;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.5s ease, transform 0.5s ease;
@@ -776,8 +783,14 @@
             }
 
             .benefit-list li {
-                font-size: 14px;
+                font-size: 15px;
                 padding: 8px 0;
+                padding-left: 28px;
+            }
+
+            .benefit-list li::before {
+                font-size: 16px;
+                left: 2px;
             }
 
             .benefit-cta {
