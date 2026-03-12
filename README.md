@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ROX Buy and Sell - Informational Website
 
 A complete 5-page static informational website for ROX Buy and Sell, Africa's Trusted Online Marketplace.
@@ -180,3 +181,7 @@ Edit the text within HTML tags directly - all content is in plain HTML.
 ---
 
 **Note**: This is a static informational website. For actual marketplace functionality (user registration, listings, payments), you would need to build a backend application with database and API integration.
+=======
+# WallyTheActivist.github.io
+Root Domain
+>>>>>>> dc46f753ee5512028b4bcf21977cc6c20e8ccf2e
