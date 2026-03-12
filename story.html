@@ -688,10 +688,351 @@
             margin-top: 40px;
         }
 
-        /* Responsive Design */
-        @media (max-width: 900px) {
+        /* Responsive Design - Mobile First Approach */
+        
+        /* Mobile: max-width 600px */
+        @media (max-width: 600px) {
+            /* Typography - Mobile */
+            body {
+                font-size: 15px;
+            }
+
             h1 {
-                font-size: 38px;
+                font-size: 28px;
+                line-height: 1.3;
+            }
+
+            h2 {
+                font-size: 24px;
+                line-height: 1.3;
+            }
+
+            h3 {
+                font-size: 20px;
+                line-height: 1.4;
+            }
+
+            /* Navigation - Mobile */
+            nav {
+                padding: 15px 20px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 65px;
+                flex-direction: column;
+                background-color: #FFFFFF;
+                width: 100%;
+                text-align: center;
+                transition: left 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                box-shadow: 0 10px 27px rgba(0,0,0,0.1);
+                padding: 30px 0;
+                gap: 0;
+                max-height: calc(100vh - 65px);
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                padding: 18px 0;
+                width: 100%;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            /* Page Header - Mobile */
+            .page-header {
+                padding: 60px 20px;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+                margin-bottom: 16px;
+            }
+
+            .page-header .subtitle {
+                font-size: 16px;
+                max-width: 100%;
+                margin-bottom: 25px;
+            }
+
+            /* Founder Quote - Mobile */
+            .founder-quote {
+                padding: 20px 25px;
+                max-width: 100%;
+                margin: 0 auto;
+                border-radius: 12px;
+            }
+
+            .founder-quote p {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+
+            .founder-quote .attribution {
+                font-size: 14px;
+            }
+
+            /* Sections - Mobile */
+            section {
+                padding: 40px 20px;
+            }
+
+            /* Story Section - Mobile */
+            .story-section {
+                padding: 40px 25px;
+                margin: 30px 0;
+                border-radius: 15px;
+            }
+
+            .story-section h2 {
+                font-size: 26px;
+                margin-bottom: 20px;
+            }
+
+            .story-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .story-text p {
+                font-size: 16px;
+                margin-bottom: 16px;
+            }
+
+            .story-text p:first-of-type::first-letter {
+                font-size: 48px;
+                line-height: 40px;
+                padding-right: 8px;
+            }
+
+            .story-image {
+                height: 250px;
+                border-radius: 12px;
+            }
+
+            /* Vision Section - Mobile */
+            .vision-section {
+                padding: 40px 25px;
+                margin: 40px 0;
+                border-radius: 15px;
+            }
+
+            .vision-section h3 {
+                font-size: 24px;
+                margin-bottom: 25px;
+            }
+
+            .vision-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .vision-card {
+                padding: 25px 20px;
+                border-radius: 12px;
+            }
+
+            .vision-icon {
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
+
+            .vision-card h4 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .vision-card p {
+                font-size: 15px;
+            }
+
+            /* Empowerment Image - Mobile */
+            .empowerment-image {
+                height: 300px;
+                margin: 40px 0;
+                border-radius: 15px;
+            }
+
+            .empowerment-overlay {
+                padding: 30px 20px;
+            }
+
+            .empowerment-overlay h3 {
+                font-size: 24px;
+                margin-bottom: 12px;
+            }
+
+            .empowerment-overlay p {
+                font-size: 16px;
+            }
+
+            /* Why Build Section - Mobile */
+            .why-build-section {
+                padding: 40px 20px;
+            }
+
+            .why-build-section h2 {
+                font-size: 26px;
+                margin-bottom: 25px;
+            }
+
+            .differences {
+                padding: 25px 20px;
+                margin: 0 auto;
+                max-width: 100%;
+                border-radius: 12px;
+            }
+
+            .differences p {
+                font-size: 16px;
+                margin-bottom: 16px;
+            }
+
+            .differences p:first-of-type::first-letter {
+                font-size: 44px;
+                line-height: 38px;
+                padding-right: 8px;
+            }
+
+            /* Mission Grid - Mobile */
+            .mission-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-top: 30px;
+            }
+
+            .mission-card {
+                padding: 30px 25px;
+                border-radius: 12px;
+            }
+
+            .mission-number {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                line-height: 40px;
+                margin-bottom: 15px;
+            }
+
+            .mission-card h3 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .mission-card p {
+                font-size: 15px;
+            }
+
+            /* Testimonials Section - Mobile */
+            .testimonials-section {
+                padding: 40px 25px;
+                margin: 40px 0;
+                border-radius: 15px;
+            }
+
+            .testimonials-section h2 {
+                font-size: 26px;
+                margin-bottom: 30px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .testimonial-card {
+                padding: 25px 20px;
+                border-radius: 12px;
+            }
+
+            .testimonial-quote {
+                font-size: 15px;
+                margin-bottom: 15px;
+            }
+
+            .testimonial-author {
+                font-size: 14px;
+            }
+
+            .testimonial-stars {
+                font-size: 16px;
+            }
+
+            /* CTA Section - Mobile */
+            .cta-section {
+                padding: 50px 25px;
+                margin: 40px 0;
+                border-radius: 15px;
+            }
+
+            .cta-section h2 {
+                font-size: 26px;
+                margin-bottom: 15px;
+            }
+
+            .cta-section p {
+                font-size: 16px;
+                max-width: 100%;
+                margin-bottom: 25px;
+            }
+
+            .cta-button {
+                padding: 16px 35px;
+                font-size: 17px;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            /* Footer - Mobile */
+            footer {
+                clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 100%);
+                padding-top: 80px;
+                padding-bottom: 20px;
+            }
+
+            footer .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            footer h3 {
+                font-size: 20px;
+            }
+
+            footer p,
+            footer a {
+                font-size: 15px;
+            }
+
+            .social-icons a {
+                font-size: 24px;
+            }
+
+            .footer-bottom {
+                font-size: 14px;
+            }
+        }
+
+        /* Tablet: 601px - 900px */
+        @media (min-width: 601px) and (max-width: 900px) {
+            /* Typography - Tablet */
+            body {
+                font-size: 16px;
+            }
+
+            h1 {
+                font-size: 36px;
             }
 
             h2 {
@@ -702,218 +1043,164 @@
                 font-size: 22px;
             }
 
+            /* Navigation - Tablet */
+            nav {
+                padding: 18px 30px;
+            }
+
+            .nav-links {
+                gap: 25px;
+            }
+
+            /* Page Header - Tablet */
+            .page-header {
+                padding: 80px 40px;
+            }
+
             .page-header h1 {
-                font-size: 42px;
+                font-size: 40px;
             }
 
             .page-header .subtitle {
-                font-size: 20px;
+                font-size: 18px;
+            }
+
+            /* Founder Quote - Tablet */
+            .founder-quote {
+                padding: 25px 35px;
+                max-width: 700px;
             }
 
             .founder-quote p {
-                font-size: 17px;
+                font-size: 18px;
+            }
+
+            /* Sections - Tablet */
+            section {
+                padding: 50px 30px;
+            }
+
+            /* Story Section - Tablet */
+            .story-section {
+                padding: 50px 35px;
+                margin: 40px 0;
             }
 
             .story-content {
                 grid-template-columns: 1fr;
-            }
-
-            .story-image {
-                height: 350px;
-            }
-
-            .vision-grid,
-            .testimonials-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .empowerment-image {
-                height: 350px;
-            }
-
-            .mission-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .nav-links {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background-color: #FFFFFF;
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 27px rgba(0,0,0,0.1);
-                padding: 20px 0;
-                gap: 0;
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-links li {
-                padding: 15px 0;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            /* Increase font sizes by 15% for mobile readability */
-            body {
-                font-size: 16px;
-            }
-
-            h1 {
-                font-size: 36px;
-            }
-
-            h2 {
-                font-size: 30px;
-            }
-
-            h3 {
-                font-size: 24px;
-            }
-
-            .page-header {
-                padding: 70px 20px;
-            }
-
-            .page-header h1 {
-                font-size: 36px;
-            }
-
-            .page-header .subtitle {
-                font-size: 19px;
-            }
-
-            .founder-quote {
-                padding: 20px 25px;
-            }
-
-            .founder-quote p {
-                font-size: 16px;
-            }
-
-            section {
-                padding: 40px 15px;
-            }
-
-            .story-section {
-                padding: 40px 25px;
-                margin: 30px 10px;
-            }
-
-            .story-section h2 {
-                font-size: 30px;
+                gap: 40px;
             }
 
             .story-text p {
                 font-size: 17px;
             }
 
-            .story-text p:first-of-type::first-letter {
-                font-size: 56px;
-            }
-
             .story-image {
-                height: 280px;
+                height: 350px;
             }
 
+            /* Vision Grid - Tablet (2 columns) */
             .vision-section {
-                padding: 40px 25px;
-                margin: 40px 10px;
+                padding: 50px 35px;
+                margin: 50px 0;
             }
 
-            .vision-section h3 {
-                font-size: 28px;
+            .vision-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
             }
 
-            .vision-grid,
-            .testimonials-grid,
-            .mission-grid {
-                grid-template-columns: 1fr;
-            }
-
+            /* Empowerment Image - Tablet */
             .empowerment-image {
-                height: 300px;
+                height: 400px;
+                margin: 50px 0;
             }
 
-            .empowerment-overlay h3 {
-                font-size: 26px;
+            .empowerment-overlay {
+                padding: 40px;
             }
 
-            .empowerment-overlay p {
-                font-size: 17px;
-            }
-
-            .why-build-section h2 {
-                font-size: 30px;
-            }
-
+            /* Why Build Section - Tablet */
             .differences {
-                padding: 25px 20px;
+                padding: 30px 35px;
             }
 
-            .differences p {
-                font-size: 17px;
+            /* Mission Grid - Tablet (2 columns) */
+            .mission-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
             }
 
-            .differences p:first-of-type::first-letter {
-                font-size: 48px;
-            }
-
-            .mission-card h3 {
-                font-size: 20px;
-            }
-
-            .mission-card p {
-                font-size: 15px;
-            }
-
+            /* Testimonials - Tablet (2 columns) */
             .testimonials-section {
-                padding: 40px 25px;
-                margin: 40px 10px;
+                padding: 50px 35px;
             }
 
-            .testimonials-section h2 {
-                font-size: 30px;
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
             }
 
-            .testimonial-card {
-                padding: 25px;
-            }
-
-            .testimonial-quote {
-                font-size: 16px;
-            }
-
+            /* CTA Section - Tablet */
             .cta-section {
-                padding: 50px 25px;
-                margin: 40px 10px;
-            }
-
-            .cta-section h2 {
-                font-size: 30px;
-            }
-
-            .cta-section p {
-                font-size: 18px;
+                padding: 60px 40px;
+                margin: 50px 0;
             }
 
             .cta-button {
-                padding: 16px 35px;
+                padding: 17px 40px;
                 font-size: 18px;
             }
+        }
 
-            footer {
-                clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 100%);
-                padding-top: 80px;
+        /* Desktop: 901px+ */
+        @media (min-width: 901px) {
+            /* Story Content - Desktop (2 columns) */
+            .story-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 50px;
+            }
+
+            .story-image {
+                height: 400px;
+            }
+
+            /* Vision Grid - Desktop (3 columns) */
+            .vision-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 40px;
+            }
+
+            /* Empowerment Image - Desktop */
+            .empowerment-image {
+                height: 500px;
+            }
+
+            /* Mission Grid - Desktop (3 columns) */
+            .mission-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 40px;
+            }
+
+            /* Testimonials - Desktop (3 columns) */
+            .testimonials-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 40px;
+            }
+        }
+
+        /* Large Desktop: 1200px+ */
+        @media (min-width: 1200px) {
+            .vision-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .mission-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     </style>

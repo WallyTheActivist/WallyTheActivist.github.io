@@ -650,17 +650,330 @@
         }
 
         /* Wide screen optimization - ensure max 3 columns for benefits */
-        @media (min-width: 1400px) {
+        /* Responsive Design - Mobile First Approach */
+        
+        /* Mobile: max-width 600px */
+        @media (max-width: 600px) {
+            /* Typography - Mobile */
+            body {
+                font-size: 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+                line-height: 1.3;
+            }
+
+            h2 {
+                font-size: 24px;
+                line-height: 1.3;
+            }
+
+            h3 {
+                font-size: 20px;
+                line-height: 1.4;
+            }
+
+            /* Navigation - Mobile */
+            nav {
+                padding: 15px 20px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 65px;
+                flex-direction: column;
+                background-color: #FFFFFF;
+                width: 100%;
+                text-align: center;
+                transition: left 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                box-shadow: 0 10px 27px rgba(0,0,0,0.1);
+                padding: 30px 0;
+                gap: 0;
+                max-height: calc(100vh - 65px);
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                padding: 18px 0;
+                width: 100%;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            /* Page Header - Mobile */
+            .page-header {
+                padding: 60px 20px;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+                margin-bottom: 16px;
+            }
+
+            .page-header .subtitle {
+                font-size: 16px;
+                max-width: 100%;
+                margin-bottom: 12px;
+            }
+
+            .page-header .tagline {
+                font-size: 15px;
+            }
+
+            /* Sections - Mobile */
+            section {
+                padding: 40px 20px;
+            }
+
+            /* Benefits Section - Mobile (1 column) */
             .benefits-section {
-                grid-template-columns: repeat(3, 1fr);
-                max-width: 1200px;
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 40px 20px;
+                max-width: 100%;
+            }
+
+            .benefit-card {
+                padding: 30px 25px;
+                border-radius: 15px;
+            }
+
+            .benefit-icon {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 20px;
+            }
+
+            .benefit-icon svg {
+                width: 35px;
+                height: 35px;
+            }
+
+            .benefit-card h2 {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+
+            .benefit-card p {
+                font-size: 15px;
+                margin-bottom: 15px;
+            }
+
+            .benefit-list {
+                margin-bottom: 20px;
+            }
+
+            .benefit-list li {
+                font-size: 14px;
+                padding: 8px 0;
+            }
+
+            .benefit-cta {
+                margin-top: 20px;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 100%;
+                padding: 14px 28px;
+                font-size: 15px;
+                min-width: auto;
+            }
+
+            /* Community Section - Mobile */
+            .community-section {
+                padding: 40px 25px;
+                margin: 40px 0;
+                border-radius: 15px;
+            }
+
+            .community-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .community-text h3 {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+
+            .community-text p {
+                font-size: 15px;
+                margin-bottom: 15px;
+            }
+
+            .community-image {
+                order: -1;
+            }
+
+            .community-image img {
+                height: 250px;
+                border-radius: 12px;
+            }
+
+            /* Africa Section - Mobile */
+            .africa-section {
+                padding: 40px 25px;
+                margin: 40px 0;
+                border-radius: 15px;
+            }
+
+            .africa-section h3 {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+
+            .africa-section p {
+                font-size: 15px;
+                max-width: 100%;
+            }
+
+            /* Features Section - Mobile */
+            .features-section {
+                padding: 40px 20px;
+            }
+
+            .features-section h2 {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+
+            .features-intro {
+                font-size: 16px;
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .feature-card {
+                padding: 30px 25px;
+                border-radius: 15px;
+            }
+
+            .feature-icon {
+                font-size: 42px;
+                margin-bottom: 15px;
+            }
+
+            .feature-card h3 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .feature-card p {
+                font-size: 15px;
+            }
+
+            /* Testimonials Section - Mobile */
+            .testimonials-section {
+                padding: 40px 20px;
+            }
+
+            .testimonials-section h2 {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+
+            .testimonials-intro {
+                font-size: 16px;
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .testimonial-card {
+                padding: 30px 25px;
+                border-radius: 15px;
+            }
+
+            .testimonial-quote {
+                font-size: 15px;
+                margin-bottom: 20px;
+            }
+
+            .testimonial-author {
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+
+            .testimonial-stars {
+                font-size: 16px;
+            }
+
+            /* Success Section - Mobile */
+            .success-section {
+                padding: 40px 25px;
+                margin: 40px 0;
+                border-radius: 15px;
+            }
+
+            .success-section h3 {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+
+            .success-section p {
+                font-size: 15px;
+                max-width: 100%;
+            }
+
+            /* Footer - Mobile */
+            footer {
+                padding: 40px 20px 20px;
+            }
+
+            footer .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            footer h3 {
+                font-size: 20px;
+            }
+
+            footer p,
+            footer a {
+                font-size: 15px;
+            }
+
+            .social-icons a {
+                font-size: 24px;
+            }
+
+            .footer-bottom {
+                font-size: 14px;
             }
         }
 
-        /* Responsive Design */
-        @media (max-width: 900px) {
+        /* Tablet: 601px - 900px */
+        @media (min-width: 601px) and (max-width: 900px) {
+            /* Typography - Tablet */
+            body {
+                font-size: 16px;
+            }
+
             h1 {
-                font-size: 38px;
+                font-size: 36px;
             }
 
             h2 {
@@ -671,146 +984,149 @@
                 font-size: 22px;
             }
 
+            /* Navigation - Tablet */
+            nav {
+                padding: 18px 30px;
+            }
+
+            .nav-links {
+                gap: 25px;
+            }
+
+            /* Page Header - Tablet */
+            .page-header {
+                padding: 80px 40px;
+            }
+
             .page-header h1 {
-                font-size: 42px;
+                font-size: 40px;
             }
 
             .page-header .subtitle {
-                font-size: 19px;
+                font-size: 18px;
             }
 
             .page-header .tagline {
                 font-size: 17px;
             }
 
+            /* Sections - Tablet */
+            section {
+                padding: 50px 30px;
+            }
+
+            /* Benefits Section - Tablet (2 columns) */
             .benefits-section {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                grid-template-columns: repeat(2, 1fr);
                 gap: 30px;
+                padding: 50px 30px;
+            }
+
+            .benefit-card {
+                padding: 35px 30px;
+            }
+
+            /* Community Section - Tablet */
+            .community-section {
+                padding: 50px 35px;
             }
 
             .community-content {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
 
             .community-image img {
                 height: 300px;
             }
 
-            .features-section h2,
-            .testimonials-section h2 {
-                font-size: 32px;
+            /* Features Section - Tablet (2 columns) */
+            .features-section {
+                padding: 50px 30px;
             }
 
+            .features-section h2 {
+                font-size: 28px;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            /* Testimonials Section - Tablet (2 columns) */
+            .testimonials-section {
+                padding: 50px 30px;
+            }
+
+            .testimonials-section h2 {
+                font-size: 28px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            /* CTA Buttons - Tablet */
             .cta-button {
                 min-width: 160px;
-                padding: 12px 28px;
+                padding: 13px 30px;
             }
         }
 
-        @media (max-width: 600px) {
-            .nav-links {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background-color: #FFFFFF;
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 27px rgba(0,0,0,0.1);
-                padding: 20px 0;
-                gap: 0;
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-links li {
-                padding: 15px 0;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            h1 {
-                font-size: 32px;
-            }
-
-            h2 {
-                font-size: 24px;
-            }
-
-            h3 {
-                font-size: 20px;
-            }
-
-            body {
-                font-size: 15px;
-            }
-
-            .page-header {
-                padding: 70px 20px;
-            }
-
-            .page-header h1 {
-                font-size: 34px;
-            }
-
-            .page-header .subtitle {
-                font-size: 17px;
-            }
-
-            .page-header .tagline {
-                font-size: 16px;
-            }
-
-            section {
-                padding: 40px 10px;
-            }
-
+        /* Desktop: 901px+ */
+        @media (min-width: 901px) {
+            /* Benefits Section - Desktop (3 columns on larger screens) */
             .benefits-section {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                padding: 40px 10px;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 40px;
             }
 
-            .benefit-card,
-            .community-section,
-            .africa-section,
-            .success-section {
-                padding: 30px 20px;
-            }
-
-            .community-text h3,
-            .africa-section h3,
-            .success-section h3 {
-                font-size: 28px;
-            }
-
-            .features-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .features-section h2,
-            .testimonials-section h2 {
-                font-size: 28px;
-            }
-
-            .cta-button {
-                min-width: 140px;
-                padding: 12px 24px;
-                font-size: 15px;
-                display: block;
-                width: 100%;
-                max-width: 280px;
-                margin: 8px auto;
+            /* Community Content - Desktop (side-by-side) */
+            .community-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 50px;
             }
 
             .community-image img {
-                height: 250px;
+                height: 400px;
+            }
+
+            /* Features Grid - Desktop (3 columns) */
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 40px;
+            }
+
+            /* Testimonials Grid - Desktop (3 columns) */
+            .testimonials-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 40px;
+            }
+        }
+
+        /* Large Desktop: 1200px+ */
+        @media (min-width: 1200px) {
+            .benefits-section {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Extra Large Desktop: 1400px+ */
+        @media (min-width: 1400px) {
+            .benefits-section {
+                max-width: 1300px;
             }
         }
     </style>
