@@ -17,13 +17,6 @@
             box-sizing: border-box;
         }
 
-        /* Global Image Responsiveness */
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
         body {
             font-family: 'Source Sans Pro', sans-serif;
             font-size: 16px;
@@ -32,6 +25,7 @@
             background-color: #FFFFFF;
             opacity: 0;
             transition: opacity 0.3s ease;
+            padding-top: 70px;
         }
 
         body.loaded {
@@ -58,69 +52,119 @@
             margin-bottom: 12px;
         }
 
-        /* Header and Navigation */
-        header {
-            background-color: #FFFFFF;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            position: sticky;
+        /* Header and Navigation - Compact Modern Design */
+        #main-header {
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             z-index: 1000;
-            transition: box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        header.scrolled {
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        #main-header.scrolled {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        nav {
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 40px;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: #FF4500;
-            text-decoration: none;
-        }
-
-        .nav-links {
             display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        .nav-links a {
+            align-items: center;
             text-decoration: none;
-            color: #003366;
-            font-weight: 600;
-            transition: color 0.3s;
+            background: transparent;
+            border: none;
+            padding: 0;
+            margin-right: 25px;
+            transition: opacity 0.3s ease;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        .logo img {
+            max-width: 120px;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            color: #333;
+            transition: color 0.2s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #FF4500;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
             color: #FF4500;
         }
 
-        .hamburger {
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
             display: none;
             flex-direction: column;
             cursor: pointer;
             background: none;
             border: none;
+            padding: 5px;
         }
 
-        .hamburger span {
-            width: 25px;
+        .mobile-menu-toggle span {
+            width: 28px;
             height: 3px;
-            background-color: #003366;
-            margin: 3px 0;
-            transition: 0.3s;
+            background: #FF4500;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
         }
 
         /* Page Header */
@@ -159,7 +203,7 @@
         }
 
         section {
-            padding: 80px 60px;
+            padding: 60px 20px;
         }
 
         /* Founder Section */
@@ -183,19 +227,11 @@
             flex-wrap: wrap;
         }
 
-        .founder-container {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .founder-container img {
-            max-width: 300px;
-            width: 100%;
-            height: auto;
+        .founder-image {
+            flex: 0 0 300px;
+            height: 300px;
+            background: url('images/cohen.png') center/cover;
             border-radius: 50%;
-            object-fit: cover;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
 
@@ -544,6 +580,21 @@
             margin-bottom: 16px;
         }
 
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            width: 120px;
+            height: auto;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-logo img:hover {
+            opacity: 1;
+        }
+
         .footer-links {
             list-style: none;
         }
@@ -582,7 +633,59 @@
             color: #CCCCCC;
         }
 
+        /* ROX Runners Section */
+        .runners-section {
+            padding: 80px 20px;
+            background: #f9fafb;
+        }
+
+        .runners-container {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .runners-container h2 {
+            font-size: 32px;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .runners-container p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .runner-highlight {
+            margin-top: 30px;
+            padding: 18px 25px;
+            background: linear-gradient(135deg, #ff7a18, #ffb347);
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
         /* Responsive Design - Mobile First Approach */
+        
+        /* Tablet: max-width 768px */
+        @media (max-width: 768px) {
+            .logo img {
+                max-width: 90px;
+            }
+
+            /* ROX Runners - Tablet */
+            .runners-container h2 {
+                font-size: 24px;
+            }
+
+            .runners-container p {
+                font-size: 16px;
+            }
+        }
         
         /* Mobile: max-width 600px */
         @media (max-width: 600px) {
@@ -611,14 +714,14 @@
                 padding: 15px 20px;
             }
 
-            .logo {
-                font-size: 22px;
+            .logo img {
+                max-width: 110px;
             }
 
-            .nav-links {
+            .nav-menu {
                 position: fixed;
                 left: -100%;
-                top: 65px;
+                top: 55px;
                 flex-direction: column;
                 background-color: #FFFFFF;
                 width: 100%;
@@ -627,20 +730,21 @@
                 box-shadow: 0 10px 27px rgba(0,0,0,0.1);
                 padding: 30px 0;
                 gap: 0;
-                max-height: calc(100vh - 65px);
+                max-height: calc(100vh - 55px);
                 overflow-y: auto;
             }
 
-            .nav-links.active {
+            .nav-menu.active {
                 left: 0;
             }
 
-            .nav-links li {
+            .nav-menu a {
                 padding: 18px 0;
                 width: 100%;
+                display: block;
             }
 
-            .hamburger {
+            .mobile-menu-toggle {
                 display: flex;
             }
 
@@ -664,20 +768,6 @@
                 padding: 40px 20px;
             }
 
-            main {
-                padding: 10px;
-            }
-
-            .founder-highlights li {
-                padding-left: 28px;
-                font-size: 15px;
-            }
-
-            .founder-highlights li::before {
-                font-size: 16px;
-                left: 2px;
-            }
-
             /* Founder Section - Mobile */
             .founder-section {
                 padding: 40px 20px;
@@ -693,16 +783,15 @@
                 gap: 25px;
             }
 
-            .founder-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 25px;
-            }
-
-            .founder-container img {
-                max-width: 250px;
+            .founder-image {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 100%;
+                height: 300px;
                 border-radius: 12px;
-                margin: 0 auto;
+                background: url('images/cohen.png') center/cover;
+                background-size: cover;
+                background-position: center;
             }
 
             .founder-text {
@@ -924,12 +1013,20 @@
             }
 
             /* Navigation - Tablet */
-            nav {
-                padding: 18px 30px;
+            .header-container {
+                padding: 12px 30px;
             }
 
-            .nav-links {
-                gap: 25px;
+            .logo img {
+                max-width: 150px;
+            }
+
+            .nav-menu {
+                gap: 20px;
+            }
+
+            .nav-menu a {
+                font-size: 14px;
             }
 
             /* Page Header - Tablet */
@@ -960,16 +1057,15 @@
                 gap: 35px;
             }
 
-            .founder-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 35px;
-            }
-
-            .founder-container img {
-                max-width: 350px;
-                border-radius: 15px;
+            .founder-image {
+                width: 100%;
+                max-width: 500px;
+                height: 400px;
                 margin: 0 auto;
+                background: url('images/cohen.png') center/cover;
+                background-size: cover;
+                background-position: center;
+                border-radius: 15px;
             }
 
             /* Team Grid - Tablet (2 columns) */
@@ -1022,14 +1118,13 @@
                 gap: 50px;
             }
 
-            .founder-container {
-                flex-direction: row;
-                gap: 50px;
-            }
-
-            .founder-container img {
+            .founder-image {
                 flex: 0 0 350px;
                 max-width: 350px;
+                height: 400px;
+                background: url('images/cohen.png') center/cover;
+                background-size: cover;
+                background-position: center;
                 border-radius: 50%;
             }
 
@@ -1067,22 +1162,24 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo" aria-label="ROX Buy and Sell Home">ROX Buy and Sell</a>
-            <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+    <header id="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo" aria-label="ROX Buy and Sell Home">
+                <img src="images/rox-logo.png" alt="ROX Buy and Sell Logo">
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="story.html">Our Story</a>
+                <a href="team.html" class="active">Team</a>
+                <a href="why-choose.html">Why Choose ROX</a>
+                <a href="vision.html">Vision & Join</a>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="story.html">Our Story</a></li>
-                <li><a href="team.html" class="active">Team</a></li>
-                <li><a href="why-choose.html">Why Choose ROX</a></li>
-                <li><a href="vision.html">Vision & Join</a></li>
-            </ul>
-        </nav>
+        </div>
     </header>
 
     <main>
@@ -1095,10 +1192,8 @@
         <section class="founder-section">
             <h2>About the Founder</h2>
             <div class="founder-content">
-                <div class="founder-container">
-                    <img src="images/cohen.png" alt="Cohen Ngoepe - Founder & CEO of ROX Buy and Sell">
-                    <div class="founder-text">
-                        <div class="founder-bio">
+                <div class="founder-image" role="img" aria-label="Cohen Ngoepe, Founder of ROX Buy and Sell"></div>
+                <div class="founder-bio">
                     <h3>Cohen Ngoepe</h3>
                     <p class="title">Founder & CEO</p>
                     <div class="founder-quote">
@@ -1117,8 +1212,6 @@
                             <li>Guided by faith and a desire to create positive impact across Africa</li>
                             <li>Focused on building a platform where everyone can trade with confidence</li>
                         </ul>
-                    </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1194,6 +1287,29 @@
             </div>
         </section>
 
+        <section class="runners-section">
+            <div class="runners-container">
+                <h2>ROX Buy and Sell Runners / Marketers</h2>
+                
+                <p>
+                    ROX Buy and Sell has a dedicated team of runners and marketers whose role is to spread ROX across the world.
+                    Their mission is to introduce people to the platform, promote safe online trading, and help communities understand how ROX Buy and Sell works.
+                </p>
+                
+                <p>
+                    Currently, ROX has 29 runners, and each runner operates as a field marketer, sharing information, distributing flyers, conducting street interviews, and helping new users join the platform.
+                </p>
+                
+                <p>
+                    These runners are the backbone of the movement, making sure that ROX Buy and Sell reaches every corner of the community and beyond.
+                </p>
+                
+                <div class="runner-highlight">
+                    29 Active ROX Runners Promoting the Platform
+                </div>
+            </div>
+        </section>
+
         <section class="cta-section">
             <h2>Connect with Us</h2>
             <p>Have questions? Want to learn more about our team or join the ROX movement? We'd love to hear from you.</p>
@@ -1217,7 +1333,9 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>ROX Buy and Sell</h3>
+                <div class="footer-logo">
+                    <img src="images/rox-logo.png" alt="ROX Buy and Sell Logo">
+                </div>
                 <p>Africa's Trusted Online Marketplace</p>
                 <p>Real People. Real Deals. Real Trust.</p>
             </div>
@@ -1249,32 +1367,49 @@
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
+        // Auto-hide header on scroll
+        let lastScroll = 0;
+        const header = document.getElementById('main-header');
 
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-            hamburger.setAttribute('aria-expanded', !isExpanded);
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll <= 0) {
+                header.style.transform = 'translateY(0)';
+                header.classList.remove('scrolled');
+                return;
+            }
+
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                // Scrolling down - hide header
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up - show header
+                header.style.transform = 'translateY(0)';
+                header.classList.add('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
         });
 
         // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                hamburger.setAttribute('aria-expanded', 'false');
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
             });
-        });
-
-        // Header shadow on scroll
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
         });
 
         // Team role filter functionality

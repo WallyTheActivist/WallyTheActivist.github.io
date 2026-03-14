@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ROX Buy and Sell - Informational Website
 
 A complete 5-page static informational website for ROX Buy and Sell, Africa's Trusted Online Marketplace.
@@ -124,27 +123,31 @@ Upload all 5 HTML files to any web hosting service:
 
 ## 📁 File Structure
 
-```
+
 rox_website/
-├── index.html          # Home page
-├── story.html          # Our Story
-├── team.html           # Team page
-├── why-choose.html     # Why Choose ROX
-├── vision.html         # Vision & Join
-└── README.md           # This file
-```
+├── index.html
+├── story.html
+├── team.html
+├── why-choose.html
+├── vision.html
+└── README.md
+
 
 ## 🎯 Key Content Sections
 
 ### Shared Elements (All Pages)
+
 - Navigation header with ROX logo
 - Footer with:
-  - Company tagline: "Real People. Real Deals. Real Trust."
+  - Company tagline: **"Real People. Real Deals. Real Trust."**
   - Quick links to all pages
-  - Contact info (Email: info@roxbuyandsell.com, Phone: 068 280 8468 | 067 034 6561)
+  - Contact info  
+    - Email: info@roxbuyandsell.com  
+    - Phone: 068 280 8468 | 067 034 6561
   - Social media placeholder icons
 
 ### Unique Content
+
 - Exact text from ROX document
 - Founder's fraud experience story
 - Team member profiles
@@ -155,18 +158,22 @@ rox_website/
 
 ### To Change Colors
 Look for these values in the `<style>` section:
+
 - `#FF4500` - Primary orange
 - `#003366` - Deep blue
 - `#FFD700` - Gold
 
 ### To Update Images
-Replace Unsplash URLs in CSS with your own:
-```css
+
+Replace Unsplash URLs in CSS:
+
+
 background-image: url('your-image-url.jpg');
-```
+
 
 ### To Modify Content
-Edit the text within HTML tags directly - all content is in plain HTML.
+
+Edit the text within HTML tags directly.
 
 ## 📞 Contact Information
 
@@ -180,8 +187,4 @@ Edit the text within HTML tags directly - all content is in plain HTML.
 
 ---
 
-**Note**: This is a static informational website. For actual marketplace functionality (user registration, listings, payments), you would need to build a backend application with database and API integration.
-=======
-# WallyTheActivist.github.io
-Root Domain
->>>>>>> dc46f753ee5512028b4bcf21977cc6c20e8ccf2e
+**Note:** This is a static informational website. For actual marketplace functionality (user registration, listings, payments), you would need a backend application with a database and API integration.

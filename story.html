@@ -17,13 +17,6 @@
             box-sizing: border-box;
         }
 
-        /* Global Image Responsiveness */
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
         body {
             font-family: 'Source Sans Pro', sans-serif;
             font-size: 16px;
@@ -33,6 +26,7 @@
             overflow-x: hidden;
             opacity: 0;
             transition: opacity 0.3s ease;
+            padding-top: 70px;
         }
 
         body.loaded {
@@ -59,69 +53,119 @@
             margin-bottom: 12px;
         }
 
-        /* Header and Navigation */
-        header {
-            background-color: #FFFFFF;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            position: sticky;
+        /* Header and Navigation - Compact Modern Design */
+        #main-header {
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             z-index: 1000;
-            transition: box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        header.scrolled {
-            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+        #main-header.scrolled {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        nav {
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 40px;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: #FF4500;
-            text-decoration: none;
-        }
-
-        .nav-links {
             display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        .nav-links a {
+            align-items: center;
             text-decoration: none;
-            color: #003366;
-            font-weight: 600;
-            transition: color 0.3s;
+            background: transparent;
+            border: none;
+            padding: 0;
+            margin-right: 25px;
+            transition: opacity 0.3s ease;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        .logo img {
+            max-width: 120px;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            color: #333;
+            transition: color 0.2s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #FF4500;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
             color: #FF4500;
         }
 
-        .hamburger {
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
             display: none;
             flex-direction: column;
             cursor: pointer;
             background: none;
             border: none;
+            padding: 5px;
         }
 
-        .hamburger span {
-            width: 25px;
+        .mobile-menu-toggle span {
+            width: 28px;
             height: 3px;
-            background-color: #003366;
-            margin: 3px 0;
-            transition: 0.3s;
+            background: #FF4500;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
         }
 
         /* Hero Section */
@@ -199,7 +243,7 @@
         }
 
         section {
-            padding: 80px 60px;
+            padding: 50px 20px;
         }
 
         /* Fade in animation for scroll */
@@ -635,6 +679,21 @@
             font-size: 22px;
         }
 
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            width: 120px;
+            height: auto;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-logo img:hover {
+            opacity: 1;
+        }
+
         .footer-section p {
             line-height: 1.8;
             color: #CCCCCC;
@@ -697,6 +756,13 @@
 
         /* Responsive Design - Mobile First Approach */
         
+        /* Tablet: max-width 768px */
+        @media (max-width: 768px) {
+            .logo img {
+                max-width: 90px;
+            }
+        }
+        
         /* Mobile: max-width 600px */
         @media (max-width: 600px) {
             /* Typography - Mobile */
@@ -724,14 +790,14 @@
                 padding: 15px 20px;
             }
 
-            .logo {
-                font-size: 22px;
+            .logo img {
+                max-width: 110px;
             }
 
-            .nav-links {
+            .nav-menu {
                 position: fixed;
                 left: -100%;
-                top: 65px;
+                top: 55px;
                 flex-direction: column;
                 background-color: #FFFFFF;
                 width: 100%;
@@ -740,20 +806,21 @@
                 box-shadow: 0 10px 27px rgba(0,0,0,0.1);
                 padding: 30px 0;
                 gap: 0;
-                max-height: calc(100vh - 65px);
+                max-height: calc(100vh - 55px);
                 overflow-y: auto;
             }
 
-            .nav-links.active {
+            .nav-menu.active {
                 left: 0;
             }
 
-            .nav-links li {
+            .nav-menu a {
                 padding: 18px 0;
                 width: 100%;
+                display: block;
             }
 
-            .hamburger {
+            .mobile-menu-toggle {
                 display: flex;
             }
 
@@ -862,12 +929,6 @@
 
             .vision-card p {
                 font-size: 15px;
-            }
-
-            .checkmark {
-                font-size: 18px;
-                margin-right: 8px;
-                display: inline-block;
             }
 
             /* Empowerment Image - Mobile */
@@ -1057,12 +1118,20 @@
             }
 
             /* Navigation - Tablet */
-            nav {
-                padding: 18px 30px;
+            .header-container {
+                padding: 12px 30px;
             }
 
-            .nav-links {
-                gap: 25px;
+            .logo img {
+                max-width: 150px;
+            }
+
+            .nav-menu {
+                gap: 20px;
+            }
+
+            .nav-menu a {
+                font-size: 14px;
             }
 
             /* Page Header - Tablet */
@@ -1219,22 +1288,24 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo" aria-label="ROX Buy and Sell Home">ROX Buy and Sell</a>
-            <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+    <header id="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo" aria-label="ROX Buy and Sell Home">
+                <img src="images/rox-logo.png" alt="ROX Buy and Sell Logo">
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="story.html" class="active">Our Story</a>
+                <a href="team.html">Team</a>
+                <a href="why-choose.html">Why Choose ROX</a>
+                <a href="vision.html">Vision & Join</a>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="story.html" class="active">Our Story</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="why-choose.html">Why Choose ROX</a></li>
-                <li><a href="vision.html">Vision & Join</a></li>
-            </ul>
-        </nav>
+        </div>
     </header>
 
     <main>
@@ -1425,7 +1496,9 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>ROX Buy and Sell</h3>
+                <div class="footer-logo">
+                    <img src="images/rox-logo.png" alt="ROX Buy and Sell Logo">
+                </div>
                 <p>Africa's Trusted Online Marketplace</p>
                 <p><strong>Real People. Real Deals. Real Trust.</strong></p>
             </div>
@@ -1457,35 +1530,49 @@
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
+        // Auto-hide header on scroll
+        let lastScroll = 0;
+        const header = document.getElementById('main-header');
 
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-            hamburger.setAttribute('aria-expanded', !isExpanded);
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll <= 0) {
+                header.style.transform = 'translateY(0)';
+                header.classList.remove('scrolled');
+                return;
+            }
+
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                // Scrolling down - hide header
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up - show header
+                header.style.transform = 'translateY(0)';
+                header.classList.add('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
         });
 
         // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                hamburger.setAttribute('aria-expanded', 'false');
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
             });
-        });
-
-        // Header shadow on scroll
-        const header = document.querySelector('header');
-        let lastScrollY = window.scrollY;
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            lastScrollY = window.scrollY;
         });
 
         // Fade-in on scroll using IntersectionObserver
