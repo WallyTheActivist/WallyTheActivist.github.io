@@ -91,9 +91,10 @@
             margin: 0 auto;
         }
 
-        .logo {
+        .logo-container {
             display: flex;
             align-items: center;
+            gap: 10px;
             text-decoration: none;
             background: transparent;
             border: none;
@@ -102,15 +103,21 @@
             transition: opacity 0.3s ease;
         }
 
-        .logo:hover {
+        .logo-container:hover {
             opacity: 0.8;
         }
 
-        .logo img {
-            max-width: 120px;
+        .logo-container img {
+            width: 40px;
             height: auto;
             display: block;
             object-fit: contain;
+        }
+
+        .brand-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #222;
         }
 
         .nav-menu {
@@ -346,24 +353,28 @@
         .benefit-list {
             list-style: none;
             padding: 0;
+            margin: 20px 0;
             margin-bottom: 24px;
         }
 
         .benefit-list li {
-            padding: 12px 0;
-            padding-left: 30px;
-            position: relative;
-            font-size: 17px;
-            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
         }
 
-        .benefit-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #FFD700;
-            font-weight: bold;
-            font-size: 20px;
+        .check-icon {
+            color: #ff6a00;
+            font-size: 18px;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .feature-text {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #444;
         }
 
         .benefit-cta {
@@ -719,8 +730,12 @@
         
         /* Tablet: max-width 768px */
         @media (max-width: 768px) {
-            .logo img {
-                max-width: 90px;
+            .brand-name {
+                font-size: 16px;
+            }
+
+            .logo-container img {
+                width: 35px;
             }
         }
         
@@ -751,8 +766,12 @@
                 padding: 15px 20px;
             }
 
-            .logo img {
-                max-width: 110px;
+            .brand-name {
+                font-size: 16px;
+            }
+
+            .logo-container img {
+                width: 35px;
             }
 
             .nav-menu {
@@ -848,9 +867,12 @@
                 margin-bottom: 20px;
             }
 
-            .benefit-list li {
+            .check-icon {
+                font-size: 16px;
+            }
+
+            .feature-text {
                 font-size: 14px;
-                padding: 8px 0;
             }
 
             .benefit-cta {
@@ -1215,8 +1237,9 @@
 <body>
     <header id="main-header">
         <div class="header-container">
-            <a href="index.html" class="logo" aria-label="ROX Buy and Sell Home">
-                <img src="images/rox-logo.png" alt="ROX Buy and Sell Logo">
+            <a href="index.html" class="logo-container" aria-label="ROX Buy and Sell Home">
+                <img src="images/rox-logo.png" alt="ROX Logo">
+                <span class="brand-name">ROX Buy and Sell</span>
             </a>
             <nav class="nav-menu">
                 <a href="index.html">Home</a>
@@ -1249,10 +1272,22 @@
                 </div>
                 <h3>Safe and Secure</h3>
                 <ul class="benefit-list">
-                    <li>Verified user accounts</li>
-                    <li>Fraud detection systems</li>
-                    <li>Secure payment solutions</li>
-                    <li>Dispute resolution support</li>
+                    <li>
+                        <span class="check-icon">✔</span>
+                        <span class="feature-text">Verified user accounts</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✔</span>
+                        <span class="feature-text">Fraud detection systems</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✔</span>
+                        <span class="feature-text">Secure payment solutions</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✔</span>
+                        <span class="feature-text">Dispute resolution support</span>
+                    </li>
                 </ul>
                 <div class="benefit-cta">
                     <a href="vision.html" class="cta-button">Start Trading Safely</a>
@@ -1267,10 +1302,22 @@
                 </div>
                 <h3>Simple and Efficient</h3>
                 <ul class="benefit-list">
-                    <li>Post listings in seconds</li>
-                    <li>Find items quickly</li>
-                    <li>Communicate directly with verified sellers</li>
-                    <li>Track transactions in real-time</li>
+                    <li>
+                        <span class="check-icon">✔</span>
+                        <span class="feature-text">Post listings in seconds</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✔</span>
+                        <span class="feature-text">Find items quickly</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✔</span>
+                        <span class="feature-text">Communicate directly with verified sellers</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✔</span>
+                        <span class="feature-text">Track transactions in real-time</span>
+                    </li>
                 </ul>
                 <div class="benefit-cta">
                     <a href="vision.html" class="cta-button">Try Easy Listings</a>
@@ -1285,10 +1332,22 @@
                 </div>
                 <h3>Community Driven</h3>
                 <ul class="benefit-list">
-                    <li>Support local businesses and entrepreneurs</li>
-                    <li>Connect with verified community members</li>
-                    <li>Build trust through transparent trading</li>
-                    <li>Strengthen communities across Africa</li>
+                    <li>
+                        <span class="check-icon">✔</span>
+                        <span class="feature-text">Support local businesses and entrepreneurs</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✔</span>
+                        <span class="feature-text">Connect with verified community members</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✔</span>
+                        <span class="feature-text">Build trust through transparent trading</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✔</span>
+                        <span class="feature-text">Strengthen communities across Africa</span>
+                    </li>
                 </ul>
                 <div class="benefit-cta">
                     <a href="vision.html" class="cta-button">Join Our Community</a>
